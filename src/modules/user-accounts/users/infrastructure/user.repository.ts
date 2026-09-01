@@ -3,7 +3,9 @@ import { User, UserDocument } from '../domain/user.schema.js';
 import type { UserModelType } from '../domain/user.schema.js';
 import { IFindUserQuery } from './find-user.query.js';
 import { ESortDirection } from '#src/core/enums/sort-direction.enum.js';
+import { Injectable } from '@nestjs/common';
 
+@Injectable()
 export class UserRepository {
   constructor(@InjectModel(User.name) private userModel: UserModelType) {}
 
