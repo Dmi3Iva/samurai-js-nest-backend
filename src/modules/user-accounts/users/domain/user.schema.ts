@@ -10,13 +10,13 @@ export class User {
   createdAt: Date;
   updatedAt: Date;
 
-  @Prop({ required: true, type: String, unique: true })
+  @Prop({ required: true, type: String, unique: true, maxLength: 200 })
   login: string;
 
-  @Prop({ required: true, type: String })
+  @Prop({ required: true, type: String, maxLength: 200 })
   password: string;
 
-  @Prop({ required: true, type: String, unique: true })
+  @Prop({ required: true, type: String, unique: true, maxLength: 200 })
   email: string;
 
   static createInstance() {

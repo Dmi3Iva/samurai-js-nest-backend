@@ -7,6 +7,10 @@ import { Injectable } from '@nestjs/common';
 export class UserExportRepository {
   constructor(@InjectModel(User.name) private userModel: UserModelType) {}
 
+  async findUserById(userId: string) {
+    return await this.userModel.findById(userId);
+  }
+
   async removeAll() {
     await this.userModel.deleteMany({});
   }

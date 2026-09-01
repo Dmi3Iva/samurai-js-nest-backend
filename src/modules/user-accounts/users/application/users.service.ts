@@ -7,7 +7,6 @@ import { UserViewDTO } from '../dto/user-view.dto.js';
 import { QueryUsersDTO } from '../dto/query-users.dto.js';
 import { QueryUsersResultViewDTO } from '../dto/query-users-view.dto.js';
 import { Injectable } from '@nestjs/common/decorators/core/injectable.decorator.js';
-// import {  } from '@nestjs/comon';
 
 @Injectable()
 export class UsersService {
@@ -40,7 +39,8 @@ export class UsersService {
   }
 
   async getUserById(userId: string) {
-    return await this.userRepository.findUserById(userId);
+    const user = await this.userRepository.findUserById(userId);
+    return user?.mapToView() ?? null;
   }
 
   async removeUser(userId: string) {
