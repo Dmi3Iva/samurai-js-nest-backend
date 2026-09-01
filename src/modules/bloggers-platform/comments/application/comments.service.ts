@@ -11,7 +11,7 @@ export class CommentsService {
   ) {}
 
   async getCommentById(userId: string): Promise<null | CommentViewDTO> {
-    const comment = await this.commentsRepository.findUserById(userId);
+    const comment = await this.commentsRepository.findCommentById(userId);
     if (!comment) return null;
 
     const user = await this.userExportRepository.findUserById(userId);

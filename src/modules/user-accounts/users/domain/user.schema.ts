@@ -19,9 +19,9 @@ export class User {
   @Prop({ required: true, type: String, unique: true, maxLength: 200 })
   email: string;
 
-  static createInstance() {
-    return new this();
-  }
+  // static createInstance() {
+  //    new this();
+  // }
 
   mapToView(): UserViewDTO {
     const result: UserViewDTO = {

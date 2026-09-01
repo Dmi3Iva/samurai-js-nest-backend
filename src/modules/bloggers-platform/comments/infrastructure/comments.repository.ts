@@ -9,8 +9,7 @@ export class CommentsRepository {
     @InjectModel(Comment.name) private commentModel: Model<Comment>,
   ) {}
 
-  async findUserById(userId: string): Promise<CommentDocument | null> {
-    console.log({ userId });
+  async findCommentById(userId: string): Promise<CommentDocument | null> {
     return await this.commentModel.findById(userId);
   }
 }
